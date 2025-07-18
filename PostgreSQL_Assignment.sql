@@ -81,7 +81,6 @@
 --     sightings;
 -- -- Problem 3
 -- SELECT * FROM sightings WHERE "location" LIKE '%Pass%';
-
 -- -- Problem 4
 -- SELECT
 --     "name",
@@ -91,9 +90,33 @@
 --     JOIN rangers ON sightings.ranger_id = rangers.ranger_id
 -- GROUP BY
 --     "name";
+-- -- Problem 5
+-- SELECT
+--     sp.common_name
+-- FROM
+--     species AS sp
+--     LEFT JOIN
+--     sightings AS si ON sp.species_id = si.species_id
+--     WHERE si.sighting_id IS NULL;
 
--- Problem 5
-SELECT common_name FROM sightings JOIN species ON sightings.sighting_id = species.species_id GROUP BY common_name;
+-- -- Problem 6
+-- SELECT
+--     common_name,
+--     sighting_time,
+--     "name"
+-- FROM
+--     sightings si
+--     JOIN species sp ON sp.species_id = si.species_id
+--     JOIN rangers ra ON ra.ranger_id = si.ranger_id
+-- ORDER BY
+--     si.sighting_time DESC
+-- LIMIT
+--     2;
+
+-- Problem 7
+-- UPDATE species SET conservation_status = 'Historic' WHERE discovery_date < '1800-01-01';
+
+-- Problem 8
 
 
 -- SELECT
