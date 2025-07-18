@@ -71,35 +71,39 @@
 --     (2, 2, 'Bankwood Area', '2024-05-12 16:20:00', 'Juvenile seen'),
 --     (3, 3, 'Bamboo Grove East', '2024-05-15 09:10:00', 'Feeding observed'),
 --     (1, 2, 'Snowfall Pass', '2024-05-18 18:30:00', NULL);
-
 -- -- Problem 1
 -- INSERT INTO rangers("name", region)
 -- VALUES('Derek Fox', 'Coastal Plains');
-
 -- -- Problem 2
 -- SELECT
 --     COUNT(DISTINCT species_id)
 -- FROM
 --     sightings;
-
 -- -- Problem 3
 -- SELECT * FROM sightings WHERE "location" LIKE '%Pass%';
 
--- Problem 4
+-- -- Problem 4
+-- SELECT
+--     "name",
+--     COUNT(*) AS total_sightings
+-- FROM
+--     sightings
+--     JOIN rangers ON sightings.ranger_id = rangers.ranger_id
+-- GROUP BY
+--     "name";
 
-
+-- Problem 5
+SELECT common_name FROM sightings JOIN species ON sightings.sighting_id = species.species_id GROUP BY common_name;
 
 
 -- SELECT
 --     *
 -- FROM
 --     rangers;
-
 -- SELECT
 --     *
 -- FROM
 --     species;
-
 -- SELECT
 --     *
 -- FROM
