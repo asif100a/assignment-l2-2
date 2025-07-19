@@ -2,6 +2,8 @@
 
 **Ans:** PostgreSQL হল একটি শক্তিশালী, ওপেন-সোর্স, রিলেশনাল ডাটাবেস ম্যানেজমেন্ট সিস্টেম (RDBMS) যা তার দৃঢ়তা, নির্ভরযোগ্যতা এবং উন্নত বৈশিষ্ট্যের জন্য পরিচিত।
 
+---
+
 ### What is the difference between the VARCHAR and CHAR data types?
 
 **Ans:** PostgreSQL-এ VARCHAR এবং CHAR ডেটা টাইপের মধ্যে কিছু পার্থক্য রয়েছে। এর মধ্যে রয়েছে-
@@ -17,6 +19,8 @@
 ১. Variable-length স্টোরেজ (শুধুমাত্র প্রকৃত অক্ষর + ওভারহেডের জন্য space ব্যবহার করে)।
 
 ২. কোনও প্যাডিং নেই; যা insert করানো হয় ঠিক তাই সংরক্ষণ করে (সর্বোচ্চ দৈর্ঘ্য N পর্যন্ত)।
+
+---
 
 ### Explain the purpose of the WHERE clause in a SELECT statement.
 
@@ -40,6 +44,8 @@ SELECT * FROM employees WHERE department = 'Sales';
 SELECT * FROM orders WHERE order_date >= '2023-01-01';
 ```
 
+---
+
 ### How can you modify data using UPDATE statements?
 
 **Ans:** UPDATE স্টেটমেন্ট একটি টেবিলের বিদ্যমান ডেটা পরিবর্তন করে। বেসিক syntax:
@@ -49,6 +55,8 @@ SELECT * FROM orders WHERE order_date >= '2023-01-01';
 ```bash
 UPDATE users SET email = 'new@example.com' WHERE user_id = 5;
 ```
+
+---
 
 ### Explain the GROUP BY clause and its role in aggregation operations.
 
@@ -61,3 +69,5 @@ SELECT department, COUNT(*)
 FROM employees
 GROUP BY department;
 ```
+
+---
